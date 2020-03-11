@@ -4,7 +4,7 @@ import ShowIngredients from './components/ShowIngredients'
 function App() {
   return (
     <>
-      Grog Bot v1
+      <h1>Grog Bot v1</h1>
       <ShowIngredients/>
     </>
   );

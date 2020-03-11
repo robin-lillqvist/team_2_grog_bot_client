@@ -8,11 +8,9 @@ export default class ShowIngredients extends Component {
 
   componentDidMount () {
     axios.get('/ingredients').then(response => {
-      debugger
       this.setState({
         ingredientsList: response.data.ingredients
       })
-      debugger
     })
   }
 
