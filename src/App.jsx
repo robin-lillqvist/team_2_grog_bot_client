@@ -3,7 +3,7 @@ import React from 'react';
 function App() {
   return (
     <>
-      Grog Bot v1
+    <h1 id="header">Grog-Bot</h1>
     </>
   );
 }
