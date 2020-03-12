@@ -16,13 +16,13 @@ export default class ShowIngredients extends Component {
 
   render () {
     let ingredientsIndex
-    if (this.state.ingredientsList !== []){
+    if (this.state.ingredientsList !== []) {
       ingredientsIndex = this.state.ingredientsList.map(ingredient => {
         return (
-        <>
-          <label>{ingredient}</label>
-        <input type="checkbox" id={ingredient} />          
-        </>
+          <>
+            <label>{ingredient}</label>
+            <input type='checkbox' id={ingredient} value={ingredient} />
+          </>
         )
       })
     }

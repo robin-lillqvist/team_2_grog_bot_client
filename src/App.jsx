@@ -1,11 +1,11 @@
 import React from 'react';
-import ShowIngredients from './components/ShowIngredients'
+import ShowIngredientsForm from './components/ShowIngredientsForm'
 
 const App = () => {
   return (
     <>
       <h1>Grog-Bot</h1>
-      <ShowIngredients/>
+      <ShowIngredientsForm/>
     </>
   )
 }
