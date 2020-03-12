@@ -8,11 +8,14 @@ export default class ShowIngredients extends Component {
   }
 
   onChangeHandler = event => {
-    debugger
+   
     let updatedCheckbox = event.target.value
-    debugger
     let selected = this.state.selectedIngredients
+    console.log(selected)
     let isInArray = selected.includes(updatedCheckbox)
+    let ingredient1 = []
+    ingredient1.push(updatedCheckbox)
+    this.setState({selectedIngredients: ingredient1})
     console.log(isInArray)
     debugger
   }
