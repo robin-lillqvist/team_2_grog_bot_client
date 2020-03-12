@@ -3,7 +3,18 @@ import axios from 'axios'
 
 export default class ShowIngredients extends Component {
   state = {
-    ingredientsList: []
+    ingredientsList: [],
+    selectedIngredients: []
+  }
+
+  onChangeHandler = event => {
+    debugger
+    let updatedCheckbox = event.target.value
+    debugger
+    let selected = this.state.selectedIngredients
+    let isInArray = selected.includes(updatedCheckbox)
+    console.log(isInArray)
+    debugger
   }
 
   componentDidMount () {
@@ -13,7 +24,6 @@ export default class ShowIngredients extends Component {
       })
     })
   }
-
   render () {
     let ingredientsIndex
     if (this.state.ingredientsList !== []) {
@@ -21,11 +31,22 @@ export default class ShowIngredients extends Component {
         return (
           <>
             <label>{ingredient}</label>
-            <input type='checkbox' id={ingredient} value={ingredient} />
+            <input
+              type='checkbox'
+              id={ingredient}
+              name='ingredients'
+              value={ingredient}
+              onChange={this.onChangeHandler}
+            />
           </>
         )
       })
     }
-    return <div id='ingredients_index'>{ingredientsIndex}</div>
+    return (
+      <>
+        <p>{this.state.selectedIngredients}</p>
+        <div id='ingredients_index'>{ingredientsIndex}</div>
+      </>
+    )
   }
 }
