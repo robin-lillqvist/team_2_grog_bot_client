@@ -18,7 +18,12 @@ export default class ShowIngredients extends Component {
     let ingredientsIndex
     if (this.state.ingredientsList !== []){
       ingredientsIndex = this.state.ingredientsList.map(ingredient => {
-        return <li id={ingredient}>{ingredient}</li>
+        return (
+        <>
+          <label>{ingredient}</label>
+        <input type="checkbox" id={ingredient} />          
+        </>
+        )
       })
     }
     return <div id='ingredients_index'>{ingredientsIndex}</div>
