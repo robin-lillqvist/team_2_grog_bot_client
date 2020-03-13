@@ -13,7 +13,7 @@ class SelectIngredients extends Component {
   }
 
   submitHandler() {
-    // This is where the request will be sent to the backend.
+    
   }
 
   render() {
