@@ -1,14 +1,13 @@
-import React from 'react';
-import ShowIngredientsForm from './components/ShowIngredientsForm'
+import React from "react";
+import SelectIngredients from "./components/SelectIngredients";
 
 const App = () => {
   return (
     <>
       <h1>Grog-Bot</h1>
-      <ShowIngredientsForm/>
+      <SelectIngredients />
     </>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
