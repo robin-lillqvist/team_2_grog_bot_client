@@ -1,13 +1,12 @@
 describe("User can search for cocktails by selecting virgin ingredient", () => {
   before(() => {
+    cy.visit("http://localhost:3001");
     cy.server();
     cy.route({
       method: "GET",
       url: "http://localhost:3000/api/ingredients",
       response: "fixture:ingredients_response.json"
     });
-
-    cy.server();
     cy.route({
       method: "GET",
       url: "http://localhost:3000/api/cocktails",
@@ -16,8 +15,7 @@ describe("User can search for cocktails by selecting virgin ingredient", () => {
       },
       response: "fixture:cocktail_list_response.json"
     });
-
-    cy.visit("/");
+    
   });
 
   it("user can select an ingredient", () => {
