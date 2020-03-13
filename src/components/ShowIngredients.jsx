@@ -30,13 +30,13 @@ export default class ShowIngredients extends Component {
     let ingredientsOptions;
     if (this.state.ingredientsList !== []) {
       ingredientsOptions = this.state.ingredientsList.map(ingredient => {
-        return <option value={ingredient}>{ingredient}</option>;
+        return <option key={ingredient} value={ingredient}>{ingredient}</option>;
       });
     }
     return (
       <>
         {/* <p>{this.state.selectedIngredients}</p> */}
-        {/* <div id="ingredients_index">{ingredientsIndex}</div> */}
+        {/* <div id="ingredients_index">{igredientsIndex}</div> */}
         <select name="" id="ingredients_index">
           {ingredientsOptions}
         </select>

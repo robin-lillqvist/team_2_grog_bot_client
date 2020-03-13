@@ -11,6 +11,7 @@ describe("User can search for cocktails by selecting virgin ingredient", () => {
 
   it("user can select an ingredient", () => {
     cy.get("#ingredients_index").select("Orange");
+    cy.get("button").contains("Submit").click();
     
   });
 });

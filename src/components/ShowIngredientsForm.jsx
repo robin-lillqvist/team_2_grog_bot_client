@@ -2,18 +2,21 @@ import React, { Component } from 'react'
 import ShowIngredients from './ShowIngredients'
 
 export default class ShowIngredientsForm extends Component {
+  
+  async submitHandler() {
+    debugger
+  }
+  
   render () {
-    const submitFormHandler = async e => {
-      debugger
-    }
+    
 
     return (
-      <form id='register-form' onSubmit={submitFormHandler}>
-        <fieldset>
+        <>
           <ShowIngredients />
-          <button>Submit</button>
-        </fieldset>
-      </form>
+          <button onClick={this.submitHandler.bind(this)}>Submit</button>
+        </>
+
+  
     )
   }
 }
