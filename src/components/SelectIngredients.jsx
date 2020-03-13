@@ -18,7 +18,7 @@ class SelectIngredients extends Component {
     let result = await axios.get(`/cocktails?q=${this.state.selectedIngredient}`)
     debugger
     this.setState({
-      cocktailList: result.data.drinks.strDrink
+      cocktailList: result.data.drinks[0].strDrink
     })
   }
 
