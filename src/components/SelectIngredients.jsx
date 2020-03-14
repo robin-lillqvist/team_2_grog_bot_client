@@ -27,7 +27,11 @@ class SelectIngredients extends Component {
     let cocktailIndex;
     if (this.state.cocktailList !== []) {
       cocktailIndex = this.state.cocktailList.map(cocktail => {
-        return <li key={cocktail.idDrink}>{cocktail.strDrink}</li>;
+        return (
+          <li>
+            <button key={cocktail.idDrink}>{cocktail.strDrink}</button>
+          </li>
+        );
       });
     }
     return (
