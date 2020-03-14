@@ -31,5 +31,7 @@ describe("User can search for cocktails by selecting virgin ingredient", () => {
     cy.get("button")
       .contains("Tom Collins")
       .click();
+    cy.get("#cocktail_header").should("contain", "Tom Collins");
+    cy.get("#cocktail_category").should("contain", "Ordinary Drink");
   });
 });
