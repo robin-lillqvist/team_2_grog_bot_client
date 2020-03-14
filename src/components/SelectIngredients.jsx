@@ -15,31 +15,26 @@ class SelectIngredients extends Component {
   }
 
   async submitHandler() {
-    let result = await axios.get(`/cocktails?q=${this.state.selectedIngredient}`)
-    debugger
+    let result = await axios.get(
+      `/cocktails?q=${this.state.selectedIngredient}`
+    );
     this.setState({
-      cocktailList: result.data.drinks[0].strDrink
-    })
+      cocktailList: result.data.drinks
+    });
   }
 
-
-
   render() {
-    // let cocktailIndex;
-    // if (this.state.cocktailList !== []) {
-    //   cocktailIndex = this.state.cocktailList.map(cocktail => {
-    //     return (
-    //       <ul id="cocktail_index">
-    //         <li>{cocktail}</li>
-    //       </ul>
-    //     )
-    //   })
-    // }
+    let cocktailIndex;
+    if (this.state.cocktailList !== []) {
+      cocktailIndex = this.state.cocktailList.map(cocktail => {
+        return <li key={cocktail.idDrink}>{cocktail.strDrink}</li>;
+      });
+    }
     return (
       <>
         <ShowIngredients setIngredient={this.setIngredient.bind(this)} />
         <button onClick={this.submitHandler.bind(this)}>Submit</button>
-        {/* {cocktailIndex} */}
+        <ul id="cocktail_list">{cocktailIndex}</ul>
       </>
     );
   }
