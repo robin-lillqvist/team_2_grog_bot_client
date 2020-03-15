@@ -6,7 +6,7 @@ class SelectIngredients extends Component {
   state = {
     selectedIngredient: "",
     cocktailList: [],
-    selectedCocktail: []
+    selectedCocktail: [],
   };
 
   setIngredient(event) {
@@ -30,13 +30,13 @@ class SelectIngredients extends Component {
     let result = await axios.get(`/cocktails/${id}`);
     debugger;
     this.setState({
-      selectedCocktail: result.data.drinks
+      selectedCocktail: result.data.drink
     });
   }
 
   render() {
     let cocktailIndex;
-    if (this.state.cocktailList !== []) {
+    if (this.state.cocktailList !== {}) {
       cocktailIndex = this.state.cocktailList.map(cocktail => {
         return (
           <li>
@@ -56,12 +56,22 @@ class SelectIngredients extends Component {
     if (this.state.selectedCocktail !== []) {
       specificCocktail = this.state.selectedCocktail.map(cocktail => {
         return (
-          <>
-          <h2 id="cocktail_header"> {cocktail.strDrink} </h2>
-          <h4 id="cocktail_category">{cocktail.strCategory}</h4>
-          </>
-        ) 
-
+          <div key={cocktail.id} id="cocktail-container">
+            {cocktail.name}
+            {cocktail.category}
+            <img src={cocktail.image} alt='Cocktail' />
+            Ingredients:
+            {cocktail.ingredients.map(item => {
+              return (
+                <div key={cocktail.id}>
+                  {item.name} {item.measure}
+                </div>
+              );
+            })}
+            Instructions: {cocktail.instructions}
+            Glass: {cocktail.glass}
+          </div>
+        );
       });
     }
 
@@ -69,8 +79,8 @@ class SelectIngredients extends Component {
       <>
         <ShowIngredients setIngredient={this.setIngredient.bind(this)} />
         <button onClick={this.submitHandler.bind(this)}>Submit</button>
-        <ul id="cocktail_list">{cocktailIndex}</ul>
         {specificCocktail}
+        <ul id="cocktail_list">{cocktailIndex}</ul>
       </>
     );
   }
