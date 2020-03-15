@@ -26,9 +26,7 @@ class SelectIngredients extends Component {
 
   async getDetails(event) {
     let id = event.target.dataset.id;
-    debugger;
     let result = await axios.get(`/cocktails/${id}`);
-    debugger;
     this.setState({
       selectedCocktail: result.data.drink
     });
