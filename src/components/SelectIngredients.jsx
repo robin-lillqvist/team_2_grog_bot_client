@@ -6,7 +6,7 @@ class SelectIngredients extends Component {
   state = {
     selectedIngredient: "",
     cocktailList: [],
-    selectedCocktail: [],
+    selectedCocktail: []
   };
 
   setIngredient(event) {
@@ -57,11 +57,11 @@ class SelectIngredients extends Component {
           <div key={cocktail.id} id="cocktail-container">
             {cocktail.name}
             {cocktail.category}
-            <img src={cocktail.image} alt='Cocktail' />
+            <img src={cocktail.image} alt="Cocktail" />
             Ingredients:
             {cocktail.ingredients.map(item => {
               return (
-                <div key={cocktail.id} id='ingredients-container'>
+                <div key={cocktail.id} id="ingredients-container">
                   {item.name} {item.measure}
                 </div>
               );
