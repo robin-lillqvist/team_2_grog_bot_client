@@ -4,7 +4,7 @@ import axios from "axios";
 
 class SelectIngredients extends Component {
   state = {
-    selectedIngredient: "",
+    selectedIngredient: "Coca-Cola",
     cocktailList: [],
     selectedCocktail: []
   };
@@ -33,8 +33,10 @@ class SelectIngredients extends Component {
   }
 
   render() {
-    let cocktailIndex;
-    if (this.state.cocktailList !== {}) {
+    let cocktailIndex, renderSpecificCocktail;
+    let cocktailDetails = this.state.selectedCocktail;
+
+    if (this.state.cocktailList !== []) {
       cocktailIndex = this.state.cocktailList.map(cocktail => {
         return (
           <li>
@@ -50,34 +52,32 @@ class SelectIngredients extends Component {
       });
     }
 
-    let specificCocktail;
-    if (this.state.selectedCocktail !== []) {
-      specificCocktail = this.state.selectedCocktail.map(cocktail => {
-        return (
-          <div key={cocktail.id} id="cocktail-container">
-            {cocktail.name}
-            {cocktail.category}
-            <img src={cocktail.image} alt="Cocktail" />
-            Ingredients:
-            {cocktail.ingredients.map(item => {
-              return (
-                <div key={cocktail.id} id="ingredients-container">
-                  {item.name} {item.measure}
-                </div>
-              );
-            })}
-            Instructions: {cocktail.instructions}
-            Glass: {cocktail.glass}
-          </div>
-        );
-      });
+    if (cocktailDetails.id > 0) {
+      debugger;
+      renderSpecificCocktail = (
+        <div key={cocktailDetails.id} id="cocktail-container">
+          {cocktailDetails.name}
+          {cocktailDetails.category}
+          <img src={cocktailDetails.image} alt="Cocktail" />
+          Ingredients:
+          {cocktailDetails.ingredients.map(item => {
+            return (
+              <div key={cocktailDetails.id} id="ingredients-container">
+                {item.name} {item.measure}
+              </div>
+            );
+          })}
+          Instructions: {cocktailDetails.instructions}
+          Glass: {cocktailDetails.glass}
+        </div>
+      );
     }
 
     return (
       <>
         <ShowIngredients setIngredient={this.setIngredient.bind(this)} />
         <button onClick={this.submitHandler.bind(this)}>Submit</button>
-        {specificCocktail}
+        {renderSpecificCocktail}
         <ul id="cocktail_list">{cocktailIndex}</ul>
       </>
     );

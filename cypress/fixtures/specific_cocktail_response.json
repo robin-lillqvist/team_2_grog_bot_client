@@ -1,38 +1,36 @@
 {
-  "drink": [
-    {
-      "id": "12402",
-      "name": "Tom Collins",
-      "category": "Ordinary Drink",
-      "glass": "Collins glass",
-      "instructions": "In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar. Shake well. Strain into a collins glass alomst filled with ice cubes. Add the club soda. Stir and garnish with the cherry and the orange slice.",
-      "image": "https://www.thecocktaildb.com/images/media/drink/qystvv1439907682.jpg",
-      "ingredients": [
-        {
-          "name": "Gin",
-          "measure": "2 oz "
-        },
-        {
-          "name": "Lemon juice",
-          "measure": "1 oz "
-        },
-        {
-          "name": "Sugar",
-          "measure": "1 tsp superfine "
-        },
-        {
-          "name": "Club soda",
-          "measure": "3 oz"
-        },
-        {
-          "name": "Maraschino cherry",
-          "measure": "1"
-        },
-        {
-          "name": "Orange",
-          "measure": "1"
-        }
-      ]
-    }
-  ]
+  "drink": {
+    "id": "12402",
+    "name": "Tom Collins",
+    "category": "Ordinary Drink",
+    "glass": "Collins glass",
+    "instructions": "In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar. Shake well. Strain into a collins glass alomst filled with ice cubes. Add the club soda. Stir and garnish with the cherry and the orange slice.",
+    "image": "https://www.thecocktaildb.com/images/media/drink/qystvv1439907682.jpg",
+    "ingredients": [
+      {
+        "name": "Gin",
+        "measure": "2 oz "
+      },
+      {
+        "name": "Lemon juice",
+        "measure": "1 oz "
+      },
+      {
+        "name": "Sugar",
+        "measure": "1 tsp superfine "
+      },
+      {
+        "name": "Club soda",
+        "measure": "3 oz"
+      },
+      {
+        "name": "Maraschino cherry",
+        "measure": "1"
+      },
+      {
+        "name": "Orange",
+        "measure": "1"
+      }
+    ]
+  }
 }
