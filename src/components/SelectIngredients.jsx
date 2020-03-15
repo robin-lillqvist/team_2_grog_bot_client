@@ -63,7 +63,7 @@ class SelectIngredients extends Component {
             Ingredients:
             {cocktail.ingredients.map(item => {
               return (
-                <div key={cocktail.id}>
+                <div key={cocktail.id} id='ingredients-container'>
                   {item.name} {item.measure}
                 </div>
               );
