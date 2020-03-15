@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ShowIngredients from "./ShowIngredients";
+import SelectAlcohol from "./SelectAlcohol";
 import axios from "axios";
 
 class SelectIngredients extends Component {
@@ -39,7 +40,7 @@ class SelectIngredients extends Component {
     if (this.state.cocktailList !== []) {
       cocktailIndex = this.state.cocktailList.map(cocktail => {
         return (
-          <li>
+          <li key={cocktail.idDrink}>
             <button
               key={cocktail.idDrink}
               data-id={cocktail.idDrink}
@@ -53,7 +54,6 @@ class SelectIngredients extends Component {
     }
 
     if (cocktailDetails.id > 0) {
-      debugger;
       renderSpecificCocktail = (
         <div key={cocktailDetails.id} id="cocktail-container">
           {cocktailDetails.name}
@@ -69,6 +69,7 @@ class SelectIngredients extends Component {
           })}
           Instructions: {cocktailDetails.instructions}
           Glass: {cocktailDetails.glass}
+          <SelectAlcohol />
         </div>
       );
     }
