@@ -49,6 +49,6 @@ describe("User can search for alcohol", () => {
     cy.get("button")
       .contains("Search")
       .click();
-    cy.get("li").contains("A-Bay Spirit Palma 12 Years718,00 kr500 ml");
+    cy.get("li").should('contain', "A-Bay Spirit Palma 12 Years718,00 kr500 ml");
   });
 });
