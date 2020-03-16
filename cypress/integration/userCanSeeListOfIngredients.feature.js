@@ -3,7 +3,7 @@ describe("User can see a list of ingredients", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/ingredients",
+      url: "https://grog-bot.herokuapp.com/api/ingredients",
       response: "fixture:ingredients_response.json"
     });
     cy.visit("/");
