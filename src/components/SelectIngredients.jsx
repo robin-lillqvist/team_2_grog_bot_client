@@ -101,7 +101,9 @@ class SelectIngredients extends Component {
       <>
         <div className='top'>
           <ShowIngredients setIngredient={this.setIngredient.bind(this)} />
-          <button onClick={this.submitHandler.bind(this)}>Submit</button>
+          <button onClick={this.submitHandler.bind(this)}>Submit</button></div>
+          <div className='top'>
+          <SelectAlcohol />
         </div>
         <div className='middle'>
           <div id='specific_cocktail' className='ui cards'>
@@ -112,7 +114,7 @@ class SelectIngredients extends Component {
           {cocktailIndex}
         </div>
         <div>
-          <SelectAlcohol />
+          
         </div>
       </>
     )

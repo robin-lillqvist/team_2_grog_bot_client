@@ -24,12 +24,25 @@ class SelectAlcohol extends Component {
     if (this.state.alcoholList !== []) {
       alcoholIndex = this.state.alcoholList.map(alcohol => {
         return (
-          <li key={alcohol.ProductId}>
-            {alcohol.ProductNameBold} {alcohol.ProductNameThin}
-            {alcohol.PriceText} kr
-            {alcohol.VolumeText}
-            <img src={alcohol.Thumbnail.ImageUrl} alt='alcohol' />
-          </li>
+          <div
+            className='card small'
+            key={alcohol.ProductId}
+            id='alcohol-container'
+          >
+            <div className='image'>
+              <img
+                className='drinkImage'
+                src={alcohol.Thumbnail.ImageUrl}
+                alt='alcohol'
+              />
+            </div>
+            <div className='content'>
+              <div className='header'>{alcohol.ProductNameBold}</div>
+              <div className='description'>{alcohol.ProductNameThin}</div>
+              <div className='description'>{alcohol.PriceText}</div>
+              <div className='description bottom'>{alcohol.VolumeText}</div>
+            </div>
+          </div>
         )
       })
     }
@@ -38,8 +51,7 @@ class SelectAlcohol extends Component {
         <select
           key='alcohols'
           id='alcohol_selector'
-          onChange={this.setAlcohol.bind(this)}
-        >
+          onChange={this.setAlcohol.bind(this)}>
           <option value='Vodka'>Vodka</option>
           <option value='Gin'>Gin</option>
           <option value='Whisky'>Whisky</option>
@@ -49,7 +61,7 @@ class SelectAlcohol extends Component {
           <option value='Smaksatt vodka'>Flavoured Vodka</option>
         </select>
         <button onClick={this.onSearchHandler.bind(this)}>Search</button>
-        {alcoholIndex}
+        <div id='alcohol_list' className='ui cards'>{alcoholIndex}</div>
       </>
     )
   }
