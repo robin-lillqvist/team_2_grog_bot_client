@@ -4,7 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios'
 
-axios.defaults.baseURL = "https://grog-bot.herokuapp.com/api/";
+axios.defaults.baseURL = "http://localhost:3000/api/";
 ReactDOM.render(<App />, document.getElementById('root'));
 
 

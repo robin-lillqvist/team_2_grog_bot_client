@@ -1,5 +1,6 @@
 import React from "react";
 import SelectIngredients from "./components/SelectIngredients";
+import 'semantic-ui-css/semantic.min.css'
 
 const App = () => {
   return (
