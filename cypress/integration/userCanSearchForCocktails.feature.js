@@ -3,13 +3,13 @@ describe("User can search for cocktails by selecting virgin ingredient", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/ingredients",
+      url: "https://grog-bot.herokuapp.com/api/ingredients",
       response: "fixture:ingredients_response.json"
     });
 
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/cocktails**",
+      url: "https://grog-bot.herokuapp.com/api/cocktails**",
       response: "fixture:cocktail_list_response.json"
     });
     cy.visit("/");
