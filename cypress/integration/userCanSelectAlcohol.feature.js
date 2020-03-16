@@ -3,25 +3,25 @@ describe("User can search for alcohol", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/ingredients",
+      url: "https://grog-bot.herokuapp.com/api/ingredients",
       response: "fixture:ingredients_response.json"
     });
 
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/cocktails**",
+      url: "https://grog-bot.herokuapp.com/api/cocktails**",
       response: "fixture:cocktail_list_response.json"
     });
 
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/cocktails/12402",
+      url: "https://grog-bot.herokuapp.com/api/cocktails/12402",
       response: "fixture:specific_cocktail_response.json"
     });
 
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/alcohols?country=Sverige**",
+      url: "https://grog-bot.herokuapp.com/api/alcohols?country=Sverige**",
       response: "fixture:alcohol_list_response.json"
     });
 
