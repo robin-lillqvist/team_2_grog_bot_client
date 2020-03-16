@@ -40,10 +40,7 @@ class SelectIngredients extends Component {
     if (this.state.cocktailList !== []) {
       cocktailIndex = this.state.cocktailList.map(cocktail => {
         return (
-          <div
-            className='card small'
-            id='cocktail-container'
-          >
+          <div className='card small' id='cocktail-container'>
             <div className='image'>
               <img
                 className='drinkImage'
@@ -51,11 +48,18 @@ class SelectIngredients extends Component {
                 alt='Cocktail'
               />
             </div>
-            <button
-              key={cocktail.idDrink}
-              data-id={cocktail.idDrink}
-              onClick={this.getDetails.bind(this)}
-            >{cocktail.strDrink}</button>
+            <div class='content'>
+              <div className='header'>{cocktail.strDrink}</div>
+              <div class='description bottom'>
+                <button
+                  key={cocktail.idDrink}
+                  data-id={cocktail.idDrink}
+                  onClick={this.getDetails.bind(this)}
+                >
+                  Read more
+                </button>
+              </div>
+            </div>
           </div>
         )
       })
@@ -64,32 +68,32 @@ class SelectIngredients extends Component {
     if (cocktailDetails.id > 0) {
       renderSpecificCocktail = (
         <div className='card' key={cocktailDetails.id} id='cocktail-container'>
-          <div className='image'>
+          <div className='image left'>
             <img
               className='drinkImage'
               src={cocktailDetails.image}
               alt='Cocktail'
             />
           </div>
-          <div className="right">
-          <div className='header'>{cocktailDetails.name}</div>
-          <div className='meta'>{cocktailDetails.category}</div>
-          <div className='description'>
-            Ingredients:
-            {cocktailDetails.ingredients.map(item => {
-              return (
-                <div key={cocktailDetails.id} id='ingredients-container'>
-                  {item.name} {item.measure}
-                </div>
-              )
-            })}
+          <div className='content'>
+            <div className='header'>{cocktailDetails.name}</div>
+            <div className='meta'>{cocktailDetails.category}</div>
+            <div className='description'>
+              Ingredients:
+              {cocktailDetails.ingredients.map(item => {
+                return (
+                  <div key={cocktailDetails.id} id='ingredients-container'>
+                    {item.name} {item.measure}
+                  </div>
+                )
+              })}
+            </div>
+            </div>
+            <div className='extra content'>
+              Instructions: {cocktailDetails.instructions}
+            </div>
+            <div className='extra content'>Glass: {cocktailDetails.glass}</div>
           </div>
-          <div className='extra content'>
-            Instructions: {cocktailDetails.instructions}
-          </div>
-          <div className='extra content'>Glass: {cocktailDetails.glass}</div>
-        </div>
-      </div>
       )
     }
 
