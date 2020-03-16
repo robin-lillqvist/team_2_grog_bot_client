@@ -61,6 +61,7 @@ class SelectIngredients extends Component {
               </div>
             </div>
           </div>
+          
         )
       })
     }
@@ -94,7 +95,6 @@ class SelectIngredients extends Component {
             </div>
             <div className='extra content'>Glass: {cocktailDetails.glass}</div>
           </div>
-           <SelectAlcohol />
       )
     }
 
@@ -115,7 +115,7 @@ class SelectIngredients extends Component {
           {cocktailIndex}
         </div>
         <div>
-          
+        <SelectAlcohol />
         </div>
       </>
     )
