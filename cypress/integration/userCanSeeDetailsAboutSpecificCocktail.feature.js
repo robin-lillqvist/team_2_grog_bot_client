@@ -31,13 +31,16 @@ describe("User can search for cocktails by selecting virgin ingredient", () => {
     cy.get("button")
       .contains("Tom Collins")
       .click();
-    cy.get("#cocktail-container")
-      .contains("Tom Collins")
-      .contains("Ordinary Drink")
-      .contains(
-        "Instructions: In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar."
-      )
-      .contains("Glass: Collins glass");
-    cy.get("#ingredients-container").contains("Gin 2 oz");
+    cy.get("#specific-cocktail-container").within(() => {
+      cy.get(".header")
+        .contains("Tom Collins");
+        cy.get(".meta").contains("Ordinary Drink");
+        cy.get(".description").contains("Gin 2 oz");
+        cy.get(".extra.content").contains(
+          "Instructions: In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar."
+        )
+        cy.get(".extra.content").contains("Glass: Collins glass");
+    });
+    
   });
 });
