@@ -33,10 +33,10 @@ class SelectAlcohol extends Component {
               <img
                 className='drinkImage'
                 src={alcohol.Thumbnail.ImageUrl}
-                alt='alcohol'
+                alt='alcohol selection'
               />
             </div>
-            <div className='content'>
+            <div className='alcohol-content'>
               <div className='header'>{alcohol.ProductNameBold}</div>
               <div className='description'>{alcohol.ProductNameThin}</div>
               <div className='description'>{alcohol.PriceText}</div>

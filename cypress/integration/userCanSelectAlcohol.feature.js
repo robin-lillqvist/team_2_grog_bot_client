@@ -37,18 +37,22 @@ describe("User can search for alcohol", () => {
     cy.get("button")
       .contains("Tom Collins")
       .click();
-    cy.get("#cocktail-container")
-      .contains("Tom Collins")
-      .contains("Ordinary Drink")
-      .contains(
+    cy.get("#specific-cocktail-container").within(() => {
+      cy.get(".header").contains("Tom Collins");
+      cy.get(".meta").contains("Ordinary Drink");
+      cy.get(".description").contains("Gin 2 oz");
+      cy.get(".extra.content").contains(
         "Instructions: In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar."
-      )
-      .contains("Glass: Collins glass");
-    cy.get("#ingredients-container").contains("Gin 2 oz");
+      );
+      cy.get(".extra.content").contains("Glass: Collins glass");
+    });
+
     cy.get("#alcohol_selector").select("Dark Rum");
     cy.get("button")
       .contains("Search")
       .click();
-    cy.get("li").should('contain', "A-Bay Spirit Palma 12 Years718,00 kr500 ml");
+    cy.get("#alcohol_list").within(() => {
+      cy.get("#alcohol-container").should("contain","A-Bay Spirit");
+    });
   });
 });

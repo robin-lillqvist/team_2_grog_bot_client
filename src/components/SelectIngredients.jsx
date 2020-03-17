@@ -40,7 +40,7 @@ class SelectIngredients extends Component {
     if (this.state.cocktailList !== []) {
       cocktailIndex = this.state.cocktailList.map(cocktail => {
         return (
-          <div className='card small' id='cocktail-container'>
+          <div className='card small cocktail-container' id={cocktail.strDrink}>
             <div className='image'>
               <img
                 className='drinkImage'
@@ -55,8 +55,7 @@ class SelectIngredients extends Component {
                   key={cocktail.idDrink}
                   data-id={cocktail.idDrink}
                   onClick={this.getDetails.bind(this)}
-                >
-                  Read more
+                >{cocktail.strDrink}
                 </button>
               </div>
             </div>
@@ -68,7 +67,7 @@ class SelectIngredients extends Component {
 
     if (cocktailDetails.id > 0) {
       renderSpecificCocktail = (
-        <div className='card' key={cocktailDetails.id} id='cocktail-container'>
+        <div className='card' key={cocktailDetails.id} id='specific-cocktail-container'>
           <div className='image left'>
             <img
               className='drinkImage'
