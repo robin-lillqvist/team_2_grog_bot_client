@@ -30,10 +30,10 @@ class SelectAlcohol extends Component {
             id='alcohol-container'
           >
             <div className='alcohol-content'>
-              <div className='header'>{alcohol.ProductNameBold}</div>
-              <div className='description'>{alcohol.ProductNameThin}</div>
-              <div className='description'>{alcohol.PriceText}</div>
-              <div className='description bottom'>{alcohol.VolumeText}</div>
+              <div>{alcohol.ProductNameBold}</div>
+              <div>{alcohol.ProductNameThin}</div>
+              <div>Price: {alcohol.PriceText}</div>
+              <div>Volume: {alcohol.VolumeText}</div>
             </div>
           </div>
         )
