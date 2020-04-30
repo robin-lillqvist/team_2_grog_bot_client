@@ -1,3 +1,6 @@
+# Grogbot
+[![Build Status](https://semaphoreci.com/api/v1/anish2504/team_2_grog_bot_client/branches/dependabot-npm_and_yarn-acorn-5-7-4/badge.svg)](https://semaphoreci.com/anish2504/team_2_grog_bot_client)
+
 ### Authors
 [Robin Lillqvist](https://github.com/robin-lillqvist)  
 [Emma-Maria Thalen](https://github.com/emtalen)  
